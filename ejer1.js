@@ -1,44 +1,33 @@
 //------------------------------- SetInterval-------------------------
-do {
-  desde = parseInt(prompt("Ingrese el número el que desea comenzar: ")); //Le pregunta al usuario desde donde quiere empezar
-  hasta = parseInt(prompt("Ingrese el número hasta en el cual desea terminar: ")); //Pide ingresar hasta donde desea
-} while (isNaN(desde) || isNaN(hasta) || desde >= hasta);//
 
-function imprimirNumerosInterval(desde, hasta) { //La función toma dos parámetros: desdeyhasta.
-  let contador = desde; //Inicializa una variable.contadorcon el valor dedesde.
-  const intervalo = setInterval(() => { //Comienza un setInterval bucle que se ejecuta cada 1 segundo.
-    console.log(contador); //Dentro del bucle,imprime el valor actual decontadora la consola.
-    contador++; //Se incrementa contador en 1.
-    if (contador > hasta) {
-      clearInterval(intervalo);
+function imprimirNumerosInterval(desde, hasta) { //La función toma dos parámetros: desde y hasta.
+  let contador = desde; //Inicializa una variable contador con el valor de desde.
+  let tiempoId = setInterval(function() { 
+    console.log(contador); // Dentro del bucle, imprime el valor actual de contador a la consola.
+    if (contador == hasta) {
+      clearInterval(tiempoId);
     } //Si contador excede el valor de hasta,detiene el set Interval bucle usando clearInterval.
-  }, 1000); // 1 second interval
+    contador++;
+  }, 1000); // Intervalo de 1 segundo
 }
 
 
-imprimirNumerosInterval(desde, hasta);
+imprimirNumerosInterval(5, 10);
 
 //------------------------------------ SetTimeOut----------------------------------------
 
 
-function imprimirNumerosTimeout() { // función primero solicita al usuario los números inicial y final, asegurando una entrada válida.
-  do {
-    desde = parseInt(prompt("Ingrese el número desde el que desea comenzar: "));
-    hasta = parseInt(prompt("Ingrese el número hasta el que desea terminar: "));
-  } while (isNaN(desde) || isNaN(hasta) || desde >= hasta);
+function imprimirNumerosTimeout() { 
+  let contador = desde;
 
-  // 
-  function imprimirSiguiente(numero) {
-    console.log(numero);
-    if (numero > hasta) {
-      return;
+  setTimeout(function ejecutar(){
+    console.log(contador) // Imprime el valor actual de 'contador' en la consola.
+    if (contador < hasta) { // Comprueba si 'contador' es menor que 'hasta'.
+      setTimeout(ejecutar, 1000);
     }
-    setTimeout(() => imprimirSiguiente(numero + 1), 1000); // 1 segundo despues
-  }
-
-  // 
-  imprimirSiguiente(desde);
+    contador++; // Incrementa el valor de 'contador'.
+  },1000);// Configura el primer temporizador para ejecutar la función 'ejecutar' después de 1 segundo.
 }
 
-// 
-imprimirNumerosTimeout();
+
+imprimirNumerosTimeout(); // Llama a la función imprimirNumerosTimeout.
