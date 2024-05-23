@@ -1,41 +1,41 @@
-.titulo {
-    display: flex;
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    color: aquamarine;
+.titulo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center}
+
+  .contenedor {
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Dos columnas iguales */
+  }
+
+.a2{
+  margin-top: 100px;
+  display: flex;
+  gap: 20px;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+.columna{
+  margin-top: -200px;
+}
+a{
+  color: black; /* Color del texto de los enlaces */
+  text-decoration: none; /* Quitar el subrayado de los enlaces */
+  display: inline-block; /* Hacer que el enlace se comporte como un elemento en línea de bloque */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #a73131; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  text-decoration: none; /* Quitar el subrayado del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  text-align: center; /* Centrar el texto dentro del botón */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
 }
 
-.contenedor-ejercicios {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 100px;
-    margin: 10px;
-    padding: 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .a:hover:hover {
-    background-color: #eee;
-  }
-  
-  .a span {
-    font-size: 16px;
-    font-weight: bold;
-  }
+ul{
+ list-style-type: none;
+}
+
+body{
+  background-color: rgb(233, 218, 199);
+}

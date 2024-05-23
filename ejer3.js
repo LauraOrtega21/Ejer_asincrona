@@ -1,10 +1,24 @@
-function map(array, callback) { // Definición de la función map que acepta un array y un callback como argumentos.
-    let newArray = []; // Inicialización de un nuevo array vacío para almacenar los resultados.
-  
-    for (let i = 0; i < array.length; i++) { // Iteración sobre cada elemento del array.
-      let result = callback(array[i]); // Llamada al callback con el elemento actual del array y almacenamiento del resultado.
-      newArray.push(result); // Agregar el resultado al nuevo array.
-    }
-  
-    return newArray; // Devolver el nuevo array con los resultados de las llamadas al callback.
+const funtionMap = () => {
+  let pushArray = [];
+
+  for (let i = 0; i < Array.length; i++){
+    let resultado = callback(array[i]);
+    newArray.push(resultado);
   }
+}
+
+let array = [1, 2, 3, 4, 5, 6]
+
+// ------------------------------------------------------------
+
+
+console.clear
+
+let arreglo = [2, 3, 4, 5, 6];
+
+const operacion = (x) => {
+  return x * 2;
+};
+
+let resultado = arreglo.map(operacion);
+console.table(resultado);
